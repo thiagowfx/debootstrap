@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # generate Brewfile
-brew bundle dump
+brew bundle dump --force
