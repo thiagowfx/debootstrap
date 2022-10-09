@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  become: yes
+  become_method: doas
+
+  tasks:
+  - name: Install miniflux
+    apk: name=miniflux state=present
+  - name: Install nginx
+    apk: name=nginx state=present
+  - name: Ensure nginx is started now and at boot
+    service: name=nginx state=started enabled=yes
