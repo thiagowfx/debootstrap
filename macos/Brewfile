@@ -60,6 +60,7 @@ cask "iterm2"
 cask "karabiner-elements"
 cask "logseq"
 cask "qbittorrent"
+cask "qlmarkdown"
 cask "rectangle"
 cask "spotify"
 cask "steam"
@@ -69,4 +70,4 @@ cask "vlc"
 cask "windscribe"
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
-mas "Tailscale", id: 1475387142
+mas "Hush", id: 1544743900
