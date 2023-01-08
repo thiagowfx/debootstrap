@@ -5,7 +5,7 @@ install:
 	defaults write com.apple.Terminal FocusFollowsMouse -bool true
 
 	# anki + latex integration
-	brew install basictex && sudo tlmgr update --self && sudo tlmgr install dvipng
+	brew install basictex && sudo tlmgr install dvipng
 
 regen:
 	# generate Brewfile

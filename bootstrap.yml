@@ -1,0 +1,39 @@
+---
+- name: bootstrap development environment
+  hosts: all
+
+  roles:
+      - role: elliotweiser.osx-command-line-tools
+
+  tasks:
+
+    - name: ensure git is installed
+      ansible.builtin.package:
+        name: git
+        state: present
+
+    - name: update all git submodules
+      ansible.builtin.git:
+        repo: git@github.com:thiagowfx/.dotfiles.git
+        dest: ~/.dotfiles
+        recursive: yes
+        update: yes
+
+    - name: ensure stow is installed
+      ansible.builtin.package:
+        name: stow
+        state: present
+
+    # - name: Stow
+    #   tags: stow
+    #   import_role:
+    #     name: stow
+
+    # - name: Linux Desktop
+    #   tags: linux
+    #   import_role:
+    #     name: linux-desktop
+    #   when: >
+    #     (not 'CI' in ansible_env) and
+    #     (ansible_system is search("Linux")) and
+    #     (not ansible_kernel is search("microsoft"))
